@@ -80,13 +80,6 @@ const winningPattern=[
 ];
 
 const checkResult= () =>{
-    if (counter === 9){
-        result.innerHTML="Its a draw";
-        result.style.visibility="visible";
-        reset.style.visibility="visible";
-        finished=true;
-
-    }
     for (let pat of winningPattern ){
         box1=boxdiv[pat[0]];
         box2=boxdiv[pat[1]];
@@ -106,6 +99,15 @@ const checkResult= () =>{
                 finished=true;
             }
             
+        }
+    }
+    if (finished === false){
+        if (counter === 9){
+            result.innerHTML="Its a draw";
+            result.style.visibility="visible";
+            reset.style.visibility="visible";
+            finished=true;
+
         }
     }
 }
